@@ -213,9 +213,21 @@
         }
     }
 
-   //print_r($user_array[$a]);
-                        //print_r($user_ID_I);
-                        //print_r($cal_array[$k]["program"]);
+$cnt = count($predic_array_row);
+
+
+
+    for($a=0;$a<$cnt;$a++){
+        for($b=0;$b<$cnt;$b++){
+        if($predic_array_row[$a]["ratingbar"]<$predic_array_row[$b]["ratingbar"]){
+        }
+        else{
+            $tmp=$predic_array_row[$a]["ratingbar"];
+            $predic_array_row[$a]["ratingbar"]=$predic_array_row[$b]["ratingbar"];
+            $predic_array_row[$b]["ratingbar"]=$tmp;
+        }
+    }
+    }
 
 
             $jsonData3=json_encode($predic_array_row); //json배열로 만들어짐.
